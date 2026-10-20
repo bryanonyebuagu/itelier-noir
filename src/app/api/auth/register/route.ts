@@ -10,6 +10,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
+    if(email.trim().toLowerCase()===process.env.OWNER_EMAIL?.trim().toLowerCase())return NextResponse.json({error:"Use your private owner invitation or sign in to this owner account."},{status:403});
     // Check if user already exists
     const existingUser = await db.user.findUnique({
       where: { email: email.toLowerCase().trim() },

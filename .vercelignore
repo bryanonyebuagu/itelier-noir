@@ -6,3 +6,6 @@ node_modules
 .next
 .git
 tests
+
+.agents
+skills-lock.json

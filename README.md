@@ -46,6 +46,8 @@ Paystack is the configured gateway. The previous simulated Flutterwave and crypt
 
 ## Administrator setup
 
+The production owner can activate access using a private, single-use invitation and choose their own password. The configured email is reserved from public registration. An invitation expires after 24 hours and stops working once the owner account is activated. Its secret is stored only in the deployment environment, never in this repository.
+
 Register your own account, then grant that account admin access from the project directory:
 
 ```sh
@@ -68,10 +70,11 @@ npm run build
 
 Core tests cover image uniqueness and existence, shipping thresholds, search/filter/sale behavior, catalog fallback, password compatibility and cart stock limits.
 
-Local verification: 11 automated tests pass and the production build succeeds. Browser checks cover 13 routes, registration, owner-only uploads, gallery append, saved size/colour changes, address persistence, quick add, favorites, checkout configuration feedback and responsive layout. Real merchant payments and production database connectivity remain dependent on the deployment credentials.
+Local verification: 12 automated tests pass and the production build succeeds. Browser checks cover 13 routes, registration, owner-only uploads, gallery append, saved size/colour changes, address persistence, quick add, favorites, checkout configuration feedback and responsive layout. Real merchant payments and production database connectivity remain dependent on the deployment credentials.
 
 ## Before a public launch
 
 Replace the original template's business biography, contact details, social profiles, delivery estimates and fitting measurements with confirmed brand information. Define the merchant's returns policy. Email verification and password-reset emails are not integrated; newsletter signups are stored without sending campaigns. Never commit `.env`, database files, or customer data.
 
 API references used: [Next.js pages](https://nextjs.org/docs/app/api-reference/file-conventions/page) and [Paystack transactions](https://paystack.com/docs/api/transaction/).
+

@@ -30,3 +30,16 @@ test('repeated verified callbacks do not reduce inventory twice',async()=>{
  for(let i=0;i<2;i++)assert.equal((await POST({json:async()=>({orderId:'o1',reference:'trusted-ref'})})).status,200);
  assert.equal(transactions,0);
 });
+test('owner invitation is private, expires, and activates only once',async()=>{
+ const previous={token:process.env.OWNER_SETUP_TOKEN,email:process.env.OWNER_EMAIL,expires:process.env.OWNER_SETUP_EXPIRES};
+ process.env.OWNER_SETUP_TOKEN='test-secret-0123456789';process.env.OWNER_EMAIL='owner@example.test';process.env.OWNER_SETUP_EXPIRES=String(Date.now()+60000);
+ let account=null;const user={findUnique:async()=>account,create:async({data})=>(account={id:'owner1',...data})};
+ const {POST}=route('app/api/owner/setup/route.ts',{'next/server':{NextResponse:{json:(body,options)=>({body,status:options?.status||200,cookies:{set(){}},headers:{set(){}}})}},'@/utils/db':{db:{$transaction:fn=>fn({user})}},'@/utils/auth':{hashPassword:()=> 'hashed',generateToken:()=> 'signed'}});
+ try{
+  const request=token=>({json:async()=>({token,password:'a-strong-owner-password',name:'Owner'})});
+  assert.equal((await POST(request('incorrect'))).status,403);
+  const secret=process.env.OWNER_SETUP_TOKEN;assert.equal((await POST(request(secret))).status,200);assert.equal(account.role,'ADMIN');assert.equal(account.email,'owner@example.test');
+  assert.equal((await POST(request(secret))).status,409);
+  process.env.OWNER_SETUP_EXPIRES='1';assert.equal((await POST(request(secret))).status,410);
+ }finally{for(const [key,value] of [['OWNER_SETUP_TOKEN',previous.token],['OWNER_EMAIL',previous.email],['OWNER_SETUP_EXPIRES',previous.expires]]){if(value===undefined)delete process.env[key];else process.env[key]=value;}}
+});
