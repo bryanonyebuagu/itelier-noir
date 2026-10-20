@@ -70,11 +70,12 @@ npm run build
 
 Core tests cover image uniqueness and existence, shipping thresholds, search/filter/sale behavior, catalog fallback, password compatibility and cart stock limits.
 
-Local verification: 12 automated tests pass and the production build succeeds. Browser checks cover 13 routes, registration, owner-only uploads, gallery append, saved size/colour changes, address persistence, quick add, favorites, checkout configuration feedback and responsive layout. Real merchant payments and production database connectivity remain dependent on the deployment credentials.
+Local verification: 12 automated tests pass and the production build succeeds. Browser checks cover 13 routes, registration, owner-only uploads, gallery append, saved size/colour changes, address persistence, quick add, favorites, checkout configuration feedback and responsive layout. Production checks also confirm PostgreSQL-backed accounts, saved addresses and owner access restrictions. Live merchant payments require a configured Paystack merchant key.
 
 ## Before a public launch
 
 Replace the original template's business biography, contact details, social profiles, delivery estimates and fitting measurements with confirmed brand information. Define the merchant's returns policy. Email verification and password-reset emails are not integrated; newsletter signups are stored without sending campaigns. Never commit `.env`, database files, or customer data.
 
 API references used: [Next.js pages](https://nextjs.org/docs/app/api-reference/file-conventions/page) and [Paystack transactions](https://paystack.com/docs/api/transaction/).
+
 
