@@ -23,7 +23,7 @@ interface ProductCardProps {
 export default function ProductCard({ product, index }: ProductCardProps) {
   const addItem = useCart((state) => state.addItem);
   const toggleWishlist = useWishlist((state) => state.toggleWishlist);
-  const isInWishlist = useWishlist((state) => state.isInWishlist);
+  const wishlisted = useWishlist((state) => state.items.some(item => item.productId === product.id));
 
   const images = safeJsonParse<string[]>(product.images, []);
   const colors = safeJsonParse<ShopColor[]>(product.colors, []);
@@ -31,7 +31,7 @@ export default function ProductCard({ product, index }: ProductCardProps) {
   const thumbnail = images[0] || "/window.svg";
   const price = getProductPrice(product);
   const hasDiscount = product.salePrice !== null;
-  const wishlisted = isInWishlist(product.id);
+
   const [quickOpen, setQuickOpen] = useState(false);
   const [added,setAdded]=useState(false);
   const [selectedSize, setSelectedSize] = useState(sizes[0] || "M");
@@ -86,6 +86,7 @@ export default function ProductCard({ product, index }: ProductCardProps) {
             })
           }
           aria-label={wishlisted ? `Remove ${product.title} from wishlist` : `Add ${product.title} to wishlist`}
+          aria-pressed={wishlisted}
         >
           <Heart size={16} fill={wishlisted ? "var(--color-primary)" : "transparent"} />
         </button>

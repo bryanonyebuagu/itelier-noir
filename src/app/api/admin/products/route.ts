@@ -52,6 +52,8 @@ export async function POST(request: NextRequest) {
       salePrice,
       stock,
       category,
+      productType,
+      ageGroup,
       badge,
       images, // expects stringified array or array
       sizes,  // expects stringified array or array
@@ -84,6 +86,8 @@ export async function POST(request: NextRequest) {
         salePrice: salePrice !== undefined && salePrice !== null ? parseFloat(salePrice) : null,
         stock: parseInt(stock) || 0,
         category: category.toUpperCase(),
+        productType: productType || "Clothing",
+        ageGroup: ageGroup || "Adults",
         badge: badge || null,
         images: typeof images === "string" ? images : JSON.stringify(images || []),
         sizes: typeof sizes === "string" ? sizes : JSON.stringify(sizes || ["S", "M", "L"]),
@@ -121,6 +125,8 @@ export async function PUT(request: NextRequest) {
       salePrice,
       stock,
       category,
+      productType,
+      ageGroup,
       badge,
       images,
       sizes,
@@ -159,6 +165,8 @@ export async function PUT(request: NextRequest) {
     if (salePrice !== undefined) data.salePrice = salePrice !== null ? parseFloat(salePrice) : null;
     if (stock !== undefined) data.stock = parseInt(stock);
     if (category !== undefined) data.category = category.toUpperCase();
+    if (productType !== undefined) data.productType = productType;
+    if (ageGroup !== undefined) data.ageGroup = ageGroup;
     if (badge !== undefined) data.badge = badge || null;
     if (images !== undefined) data.images = typeof images === "string" ? images : JSON.stringify(images);
     if (sizes !== undefined) data.sizes = typeof sizes === "string" ? sizes : JSON.stringify(sizes);

@@ -1,4 +1,6 @@
 export function validateProductInput(body:Record<string,unknown>):string|null {
+ if(body.productType!==undefined && (typeof body.productType!=="string" || !body.productType.trim() || body.productType.length>60))return "Enter a product type.";
+ if(body.ageGroup!==undefined && !["Adults","Children"].includes(String(body.ageGroup)))return "Choose Adults or Children.";
  const list=(value:unknown)=>{try{return typeof value==="string"?JSON.parse(value):value;}catch{return null;}};
  for(const field of ["basePrice","salePrice"]){const value=body[field];if(value!==undefined && value!==null && (!Number.isFinite(Number(value)) || Number(value)<0))return "Enter a valid price.";}
  if(body.stock!==undefined && (!Number.isInteger(Number(body.stock)) || Number(body.stock)<0))return "Stock must be a whole number of zero or more.";

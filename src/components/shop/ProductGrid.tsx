@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState, useRef } from "react";
 import { SlidersHorizontal } from "lucide-react";
 import ProductCard from "./ProductCard";
 import ShopFilters from "./ShopFilters";
@@ -28,7 +28,7 @@ const emptyFilters: ShopFiltersState = {
     priceMax: "",
     availability: "all",
     productType: "",
-    gender: "",
+    ageGroup: "",
 };
 
 const categoryLabel: Record<ShopCategory, string> = {
@@ -55,6 +55,7 @@ function buildProductUrl(
     if (filters.priceMin) params.set("priceMin", filters.priceMin);
     if (filters.priceMax) params.set("priceMax", filters.priceMax);
     if (filters.productType) params.set("productType",filters.productType);
+    if (filters.ageGroup) params.set("ageGroup",filters.ageGroup);
 
     return `/api/products?${params.toString()}`;
 }
@@ -65,7 +66,7 @@ function sortSizes(sizes: string[]) {
         const aIndex = order.indexOf(a);
         const bIndex = order.indexOf(b);
 
-        if (aIndex === -1 && bIndex === -1) return a.localeCompare(b);
+        if (aIndex === -1 && bIndex === -1) return a.localeCompare(b,"en",{numeric:true});
         if (aIndex === -1) return 1;
         if (bIndex === -1) return -1;
         return aIndex - bIndex;
@@ -82,6 +83,8 @@ export default function ProductGrid({ category }: ProductGridProps) {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const drawerRef=useRef<HTMLDivElement>(null);
+    const filterButtonRef=useRef<HTMLButtonElement>(null);
 
     const loadProducts = useCallback(
         async (
@@ -175,11 +178,26 @@ export default function ProductGrid({ category }: ProductGridProps) {
         };
     }, [drawerOpen]);
 
+    useEffect(()=>{
+        if(!drawerOpen)return;
+        drawerRef.current?.querySelector<HTMLButtonElement>("button")?.focus();
+        const keydown=(event:KeyboardEvent)=>{
+            if(event.key==="Escape"){setDrawerOpen(false);filterButtonRef.current?.focus();}
+            if(event.key==="Tab"){
+                const nodes=Array.from(drawerRef.current?.querySelectorAll<HTMLElement>("button:not([disabled]),input,select,a[href]")||[]).filter(n=>n.offsetParent!==null);
+                const first=nodes[0],last=nodes[nodes.length-1];
+                if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus();}
+                else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus();}
+            }
+        };
+        document.addEventListener("keydown",keydown);return()=>document.removeEventListener("keydown",keydown);
+    },[drawerOpen]);
+
     const filterOptions = useMemo(() => {
         const sizes = new Set<string>();
         const colorMap = new Map<string, ShopColor>();
 
-        allProducts.forEach((product) => {
+        allProducts.filter(p=>(!filters.productType||p.productType===filters.productType)&&(!filters.ageGroup||(p.ageGroup||"Adults")===filters.ageGroup)).forEach((product) => {
             safeJsonParse<string[]>(product.sizes, []).forEach((size) =>
                 sizes.add(size),
             );
@@ -192,8 +210,9 @@ export default function ProductGrid({ category }: ProductGridProps) {
         return {
             sizes: sortSizes(Array.from(sizes)),
             colors: Array.from(colorMap.values()),
+            productTypes:Array.from(new Set(allProducts.map(p=>p.productType||"Clothing"))).sort(),
         };
-    }, [allProducts]);
+    }, [allProducts,filters.productType,filters.ageGroup]);
 
     const visibleProducts = useMemo(() => {
         const query = debouncedSearch.toLowerCase();
@@ -267,7 +286,7 @@ export default function ProductGrid({ category }: ProductGridProps) {
                 </div>
 
                 <div className={styles.toolbar}>
-                    <button onClick={() => setDrawerOpen(true)}>
+                    <button ref={filterButtonRef} className={styles.mobileFilterButton} onClick={() => setDrawerOpen(true)} aria-expanded={drawerOpen}>
                         <SlidersHorizontal size={16} />
                         Filters
                     </button>
@@ -282,6 +301,7 @@ export default function ProductGrid({ category }: ProductGridProps) {
                         filters={filters}
                         sizes={filterOptions.sizes}
                         colors={filterOptions.colors}
+                        productTypes={filterOptions.productTypes}
                         onChange={setFilters}
                         onClear={clearAll}
                     />
@@ -299,6 +319,8 @@ export default function ProductGrid({ category }: ProductGridProps) {
                         <p>{error}</p>
                     ) : loading ? (
                         <p>Loading products...</p>
+                    ) : visibleProducts.length===0 ? (
+                        <div className={styles.emptyState}><div><h3>No matching pieces</h3><p>Try another type, size or colour.</p><button className={styles.clearButton} onClick={clearAll}>Clear filters</button></div></div>
                     ) : (
                         <div className={styles.productGrid}>
                             {visibleProducts.map((product, index) => (
@@ -312,6 +334,12 @@ export default function ProductGrid({ category }: ProductGridProps) {
                     )}
                 </div>
             </div>
+            {drawerOpen&&<div className={`${styles.drawerBackdrop} ${styles.drawerOpen}`} onClick={()=>{setDrawerOpen(false);filterButtonRef.current?.focus();}}>
+                <div ref={drawerRef} className={styles.drawerPanel} role="dialog" aria-modal="true" aria-label="Collection filters" onClick={e=>e.stopPropagation()}>
+                    <ShopFilters filters={filters} sizes={filterOptions.sizes} colors={filterOptions.colors} productTypes={filterOptions.productTypes} onChange={setFilters} onClear={clearAll} onClose={()=>{setDrawerOpen(false);filterButtonRef.current?.focus();}}/>
+                    <button className={styles.clearButton} onClick={()=>{setDrawerOpen(false);filterButtonRef.current?.focus();}}>Show {visibleProducts.length} pieces</button>
+                </div>
+            </div>}
         </section>
     );
 }

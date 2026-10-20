@@ -1,0 +1,166 @@
+# Product image sources
+
+Each external listing uses a separate source photograph, saved locally so storefront images do not depend on third-party hotlinks.
+
+Clothing photographs: [Alexey Grigorev and contributors](https://github.com/alexeygrigorev/clothing-dataset), CC0 1.0. The contributor library explicitly permits commercial use.
+
+Additional accessories and footwear: [DummyJSON sample product catalogue](https://dummyjson.com/docs/products). Branded names are retained where provided; sample imagery does not certify authenticity or establish supplier stock. Confirm specifications, sourcing, prices and availability before accepting real orders.
+
+- **junior-red-check-shirt**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/b0c03127-9dfb-4573-8934-1958396937bf.jpg) — CC0 1.0
+- **olive-pattern-shirt**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/d8445328-a318-434b-9c4e-fa29cf04be41.jpg) — CC0 1.0
+- **white-classic-shirt**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/09f4ffb6-ed86-42b6-ac23-6f8f2359460f.jpg) — CC0 1.0
+- **red-tartan-shirt**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/bc492f26-f7d2-4065-92fb-65b6df7b4ea5.jpg) — CC0 1.0
+- **brown-check-overshirt**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/6bedb1ea-9f80-4d65-bca8-7709d34ffb5e.jpg) — CC0 1.0
+- **junior-red-plaid-shirt**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/e1b266de-a3b0-4ff6-92c3-7302bc57b9cb.jpg) — CC0 1.0
+- **ivory-stripe-shirt**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/ef4afaa2-ce6f-4063-83ad-beac8d201e67.jpg) — CC0 1.0
+- **navy-windowpane-shirt**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/52242d70-6914-4819-94cd-844e380ffbcb.jpg) — CC0 1.0
+- **yellow-contrast-polo**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/ce5e1ff5-b923-462b-b897-c26d7c571ece.jpg) — CC0 1.0
+- **ivory-stripe-polo**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/f937d0b8-1c6f-432f-86a8-dac89c03b890.jpg) — CC0 1.0
+- **olive-everyday-polo**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/2df8bf1f-6d89-4acd-b6f6-9daec6b61b95.jpg) — CC0 1.0
+- **junior-navy-stripe-polo**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/3e5a1cd5-b9eb-4f6b-b840-2a17f97c3712.jpg) — CC0 1.0
+- **junior-forest-rugby-shirt**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/96399c5f-1bb4-427a-a4b0-357557fbe712.jpg) — CC0 1.0
+- **grey-contrast-collar-polo**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/3d49b769-7585-4033-b853-c16519ceabe4.jpg) — CC0 1.0
+- **stone-stripe-polo**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/4b46c02a-fd7c-4b39-8690-61da8e4396d1.jpg) — CC0 1.0
+- **olive-longline-polo**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/54730d1c-2c4d-4f00-9424-944113ccddf7.jpg) — CC0 1.0
+- **red-long-sleeve-polo**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/203369db-4e34-43c0-8efb-3cd052ef1e4d.jpg) — CC0 1.0
+- **silver-grey-polo**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/79ac5fa4-8083-4f22-be14-cebf1dcf03a1.jpg) — CC0 1.0
+- **navy-track-trousers**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/c995c900-693d-4dd6-8995-43f3051ec488.jpg) — CC0 1.0
+- **blue-straight-jeans**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/97074b7f-706a-4c17-b875-bd9baa5bed0e.jpg) — CC0 1.0
+- **grey-jogging-trousers**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/c4f11a12-2fcd-4268-8045-5a00aec7e656.jpg) — CC0 1.0
+- **junior-sand-trousers**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/b61be122-02ff-4a32-8da9-d331cbcd3cce.jpg) — CC0 1.0
+- **junior-blue-print-trousers**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/e94c0116-4bf1-4fc7-acc5-0710e208583e.jpg) — CC0 1.0
+- **junior-pale-blue-jeans**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/276db6ba-6a50-499f-8a3d-7ede222493df.jpg) — CC0 1.0
+- **graphic-board-shorts**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/5d3a1404-697f-479f-9090-c1ecd0413d27.jpg) — CC0 1.0
+- **stone-utility-shorts**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/5dcffea5-5111-4397-b9ed-313b41bdeea8.jpg) — CC0 1.0
+- **blue-denim-shorts**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/5f2c69cd-918b-4ee0-9e74-7fa12d5095ab.jpg) — CC0 1.0
+- **lime-sports-shorts**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/1a837d72-8a6b-487b-aa36-b3c2d19a8af5.jpg) — CC0 1.0
+- **teal-swim-shorts**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/314125df-9112-48b9-9b5e-ad6c4130eee5.jpg) — CC0 1.0
+- **sand-pullover-hoodie**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/739bafaa-cce9-4322-b16c-21baac21a313.jpg) — CC0 1.0
+- **grey-colourblock-hoodie**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/598090c2-f12f-4e60-9b23-d556a38117ad.jpg) — CC0 1.0
+- **navy-contrast-zip-hoodie**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/9526eb58-e1d2-4f3d-aba9-441da1c31f94.jpg) — CC0 1.0
+- **junior-burgundy-zip-hoodie**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/89d00f6f-40c7-4ff5-a84a-11569f86cc72.jpg) — CC0 1.0
+- **blue-rain-jacket**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/1b2ace0a-382e-4b87-8e9d-35cbcfac636b.jpg) — CC0 1.0
+- **olive-zip-jacket**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/ff231d91-0ff6-4485-98e7-a05c26f09fec.jpg) — CC0 1.0
+- **ivory-hooded-jacket**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/44bf7760-a7c2-41c2-9eb4-1d12bd5c235c.jpg) — CC0 1.0
+- **royal-blue-rain-jacket**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/42d817a7-45f8-4dfc-848f-a8cb124e1878.jpg) — CC0 1.0
+- **navy-zip-jacket**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/cbfb5bb7-3b89-4976-9a8b-f7601f851d39.jpg) — CC0 1.0
+- **black-winter-trapper-hat**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/a283e901-d8da-4be1-91ae-2a3c94de48a2.jpg) — CC0 1.0
+- **black-ribbed-beanie**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/b6899eaa-fe32-4547-9217-05bbcb09c217.jpg) — CC0 1.0
+- **forest-knit-beanie**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/2d6afa47-fd6f-4b2b-9e51-010280547753.jpg) — CC0 1.0
+- **peach-knit-beanie**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/708af227-43ba-4e2b-b35b-652a13cd1c77.jpg) — CC0 1.0
+- **blue-denim-jacket**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/0d9f1bf9-0008-4247-b22b-832ab1c62a70.jpg) — CC0 1.0
+- **black-botanical-camp-shirt**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/91774b48-eacb-4fd1-92a6-2073882a019f.jpg) — CC0 1.0
+- **grey-drawstring-trousers**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/9b4aa622-dab1-4d43-abc5-e736e0f600fc.jpg) — CC0 1.0
+- **blue-slim-jeans**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/f6cdc0f4-9615-4e0c-a22b-6972f6fb4e1a.jpg) — CC0 1.0
+- **junior-dark-denim-jeans**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/c905b7cc-a17a-4c75-b451-87292b51f73a.jpg) — CC0 1.0
+- **black-straight-jeans**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/f97dba0a-37f7-452b-9159-90d4d6757473.jpg) — CC0 1.0
+- **navy-drawstring-trousers**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/2f0b7b04-c238-465b-8e7a-08fabec28223.jpg) — CC0 1.0
+- **black-high-neck-coat**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/7ee4f3fd-6dc3-4b71-901f-9ccbbf8cad80.jpg) — CC0 1.0
+- **black-zip-jacket**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/43ac2647-95bc-4174-b9c1-0518a5024ed2.jpg) — CC0 1.0
+- **junior-black-zip-jacket**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/383509d9-0327-4c85-8dd4-722a38e66537.jpg) — CC0 1.0
+- **yellow-hooded-rain-jacket**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/0c6f89cd-30f6-4b44-bda5-0ba8d90e6717.jpg) — CC0 1.0
+- **junior-green-rain-jacket**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/21c78c7e-a927-49ea-94d4-9ceeaa847bb2.jpg) — CC0 1.0
+- **navy-foldover-beanie**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/26fca408-4412-466b-972a-3a160051534a.jpg) — CC0 1.0
+- **junior-blue-motif-cap**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/70731fd8-417c-4d20-94c5-56cf17a7178e.jpg) — CC0 1.0
+- **slate-cable-knit-beanie**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/7cd2e634-94bf-43f8-a95b-a840e7f79bf1.jpg) — CC0 1.0
+- **sand-bucket-hat**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/14d9f39c-48f5-4da6-bea4-b9f8b94633ed.jpg) — CC0 1.0
+- **black-bandana-cap**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/19b8f13e-9f17-4fcc-a4cd-7496672b1675.jpg) — CC0 1.0
+- **red-embellished-cap**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/a9c5f50d-abad-46f0-9bc1-4cef08015143.jpg) — CC0 1.0
+- **ivory-floral-dress**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/e3c8e575-c5b8-4c4c-9f49-62b37b611b6b.jpg) — CC0 1.0
+- **charcoal-sleeveless-dress**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/e6a8b33f-279c-4072-8dba-229d94205e55.jpg) — CC0 1.0
+- **navy-contrast-panel-dress**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/4b8e5d41-3e12-4d2b-8634-e62e71d613ff.jpg) — CC0 1.0
+- **grey-tiered-dress**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/cb61ac26-e7a5-42a6-8471-66f69a9ccd4d.jpg) — CC0 1.0
+- **emerald-lace-dress**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/21059bce-cf86-4064-b9af-5dbbbc6e7593.jpg) — CC0 1.0
+- **black-floral-dress**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/334bc6ef-fc89-4226-90f3-dd63645ec845.jpg) — CC0 1.0
+- **junior-white-tulle-dress**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/1c4c974b-47b3-40bb-a3e2-913e4874dd75.jpg) — CC0 1.0
+- **coral-wrap-dress**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/f28fb711-b7bf-4d6e-9935-6970a311a14e.jpg) — CC0 1.0
+- **ivory-floral-cap-sleeve-dress**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/f1c78283-2da0-45fc-8f20-4f874519d415.jpg) — CC0 1.0
+- **junior-white-summer-dress**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/744c6ec1-4bdd-4836-8cec-833449eb2f00.jpg) — CC0 1.0
+- **ivory-lace-blouse**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/4ef0dece-adfc-4036-ad34-922d607d4bd5.jpg) — CC0 1.0
+- **white-sheer-blouse**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/28455ee9-ca04-4efc-bb1f-73b56e6d2bd7.jpg) — CC0 1.0
+- **white-asymmetric-blouse**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/c5b80186-15fa-4b9a-9ca4-88005b0db7bf.jpg) — CC0 1.0
+- **junior-white-button-blouse**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/0527af7c-3a7c-4c87-9e1c-bee2d9db0e98.jpg) — CC0 1.0
+- **black-off-shoulder-blouse**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/3163669a-a958-45d2-af43-b1fd70d21727.jpg) — CC0 1.0
+- **rose-floral-blouse**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/6110bc5f-2101-4382-a79c-d2158d052b23.jpg) — CC0 1.0
+- **white-ruffle-sleeve-blouse**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/caf96ed0-978a-4b83-9a8b-161adb1bf40b.jpg) — CC0 1.0
+- **white-wide-sleeve-blouse**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/25757565-af92-469e-817c-85cdfc13baca.jpg) — CC0 1.0
+- **black-print-blouse**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/ea4298ea-8f39-4bb5-976b-1f4f804e4f8a.jpg) — CC0 1.0
+- **ivory-short-sleeve-blouse**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/1c60316b-2944-4224-9188-472416d193f9.jpg) — CC0 1.0
+- **white-wrap-blouse**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/d5eeaaed-97fe-4fea-a3cb-17a086cc8167.jpg) — CC0 1.0
+- **lilac-pencil-skirt**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/70045b01-b350-4918-be74-2f627290ad7a.jpg) — CC0 1.0
+- **black-zip-front-skirt**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/d44cfac9-3fda-47ba-8eb1-8b130f60b08c.jpg) — CC0 1.0
+- **royal-blue-floral-skirt**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/f8b84112-9110-4628-91e8-9d22a13767f3.jpg) — CC0 1.0
+- **colourful-pleated-skirt**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/9e530520-3973-44d0-b630-e213c809b854.jpg) — CC0 1.0
+- **ivory-button-front-skirt**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/8a7353cf-f8e3-4a73-b72e-239ed04d4e2d.jpg) — CC0 1.0
+- **sand-a-line-skirt**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/af5c0e7c-d950-4e6f-88ac-642a41a27b75.jpg) — CC0 1.0
+- **charcoal-check-skirt**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/805a7767-cec7-4323-9a75-6c5c2024479d.jpg) — CC0 1.0
+- **black-gingham-shorts**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/2ac96388-4353-44b6-a174-de2f2523afd1.jpg) — CC0 1.0
+- **black-floral-skirt**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/2459a9ab-b654-4aef-be7c-89340da78cec.jpg) — CC0 1.0
+- **white-botanical-skirt**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/78b7da73-ca6c-4e99-b88d-a9f358e7f0f2.jpg) — CC0 1.0
+- **rose-knot-front-top**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/04b42565-23ce-47d9-8f11-e3f1fb0d5051.jpg) — CC0 1.0
+- **navy-lace-cami**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/6ba8aeb1-a812-4bd7-a0b3-d898aebe3400.jpg) — CC0 1.0
+- **leopard-print-knit-vest**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/fc739085-2b1b-4176-b255-eebf690c486a.jpg) — CC0 1.0
+- **grey-ribbed-tank**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/9b76f08a-3224-4767-8ee4-04a527777477.jpg) — CC0 1.0
+- **red-lace-cami**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/6b1355ff-cc52-4e2a-a870-e91e75b926fe.jpg) — CC0 1.0
+- **black-halter-top**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/5d8bacce-65eb-4bff-9f89-3d023d881d37.jpg) — CC0 1.0
+- **navy-stripe-crop-top**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/1a6601f1-4ad2-43c9-b1b6-d46e09995c7a.jpg) — CC0 1.0
+- **wine-satin-cami**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/6d3a3735-2676-4bdc-86d0-292d27a4ab81.jpg) — CC0 1.0
+- **floral-summer-cami**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/5593f86b-0cda-415c-8d93-5af040bfb6df.jpg) — CC0 1.0
+- **junior-floral-denim-jeans**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/081b5ec1-13a6-43c8-991f-9ad2020f646a.jpg) — CC0 1.0
+- **junior-light-wash-jeans**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/3fe20c87-2f09-459c-9b59-d4e9a07b361e.jpg) — CC0 1.0
+- **junior-pink-print-trousers**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/2b64b726-ffca-44b1-a986-cc9fbdacf665.jpg) — CC0 1.0
+- **junior-floral-hooded-jacket**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/792fbbb4-b383-45ba-9e96-ffb11f1d00a9.jpg) — CC0 1.0
+- **lavender-short-trench**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/ef6be172-3598-490a-9ed2-26babf14c0fe.jpg) — CC0 1.0
+- **junior-pink-floral-gilet**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/62c7effa-be77-4a26-bb0d-3cf9373ce3ae.jpg) — CC0 1.0
+- **ivory-soft-beret**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/014b2a1b-c5a0-469b-b115-bc02b2001db5.jpg) — CC0 1.0
+- **floral-ribbon-sun-hat**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/2b3113c3-d37d-47f5-a784-20fb12228365.jpg) — CC0 1.0
+- **pale-blue-denim-shirt**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/ab3bd520-3337-4ed6-a7eb-d11455385fd3.jpg) — CC0 1.0
+- **collection-83-blue-black-check-shirt**: [source](https://dummyjson.com/products/83) — DummyJSON sample product catalogue
+- **collection-84-gigabyte-aorus-men-tshirt**: [source](https://dummyjson.com/products/84) — DummyJSON sample product catalogue
+- **collection-85-man-plaid-shirt**: [source](https://dummyjson.com/products/85) — DummyJSON sample product catalogue
+- **collection-86-man-short-sleeve-shirt**: [source](https://dummyjson.com/products/86) — DummyJSON sample product catalogue
+- **collection-87-men-check-shirt**: [source](https://dummyjson.com/products/87) — DummyJSON sample product catalogue
+- **collection-88-nike-air-jordan-1-red-and-black**: [source](https://dummyjson.com/products/88) — DummyJSON sample product catalogue
+- **collection-89-nike-baseball-cleats**: [source](https://dummyjson.com/products/89) — DummyJSON sample product catalogue
+- **collection-90-puma-future-rider-trainers**: [source](https://dummyjson.com/products/90) — DummyJSON sample product catalogue
+- **collection-91-sports-sneakers-off-white-red**: [source](https://dummyjson.com/products/91) — DummyJSON sample product catalogue
+- **plum-check-shirt**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/b951618d-f10d-4c12-82a4-9b18ee12aa2c.jpg) — CC0 1.0
+- **collection-93-brown-leather-belt-watch**: [source](https://dummyjson.com/products/93) — DummyJSON sample product catalogue
+- **collection-94-longines-master-collection**: [source](https://dummyjson.com/products/94) — DummyJSON sample product catalogue
+- **collection-95-rolex-cellini-date-black-dial**: [source](https://dummyjson.com/products/95) — DummyJSON sample product catalogue
+- **collection-96-rolex-cellini-moonphase**: [source](https://dummyjson.com/products/96) — DummyJSON sample product catalogue
+- **collection-97-rolex-datejust**: [source](https://dummyjson.com/products/97) — DummyJSON sample product catalogue
+- **collection-98-rolex-submariner-watch**: [source](https://dummyjson.com/products/98) — DummyJSON sample product catalogue
+- **collection-154-black-sun-glasses**: [source](https://dummyjson.com/products/154) — DummyJSON sample product catalogue
+- **collection-155-classic-sun-glasses**: [source](https://dummyjson.com/products/155) — DummyJSON sample product catalogue
+- **collection-156-green-and-black-glasses**: [source](https://dummyjson.com/products/156) — DummyJSON sample product catalogue
+- **collection-157-party-glasses**: [source](https://dummyjson.com/products/157) — DummyJSON sample product catalogue
+- **collection-158-sunglasses**: [source](https://dummyjson.com/products/158) — DummyJSON sample product catalogue
+- **collection-162-blue-frock**: [source](https://dummyjson.com/products/162) — DummyJSON sample product catalogue
+- **collection-163-girl-summer-dress**: [source](https://dummyjson.com/products/163) — DummyJSON sample product catalogue
+- **collection-164-gray-dress**: [source](https://dummyjson.com/products/164) — DummyJSON sample product catalogue
+- **collection-165-short-frock**: [source](https://dummyjson.com/products/165) — DummyJSON sample product catalogue
+- **collection-166-tartan-dress**: [source](https://dummyjson.com/products/166) — DummyJSON sample product catalogue
+- **collection-172-blue-women-s-handbag**: [source](https://dummyjson.com/products/172) — DummyJSON sample product catalogue
+- **collection-173-heshe-women-s-leather-bag**: [source](https://dummyjson.com/products/173) — DummyJSON sample product catalogue
+- **collection-174-prada-women-bag**: [source](https://dummyjson.com/products/174) — DummyJSON sample product catalogue
+- **collection-175-white-faux-leather-backpack**: [source](https://dummyjson.com/products/175) — DummyJSON sample product catalogue
+- **collection-176-women-handbag-black**: [source](https://dummyjson.com/products/176) — DummyJSON sample product catalogue
+- **collection-177-black-women-s-gown**: [source](https://dummyjson.com/products/177) — DummyJSON sample product catalogue
+- **collection-178-corset-leather-with-skirt**: [source](https://dummyjson.com/products/178) — DummyJSON sample product catalogue
+- **collection-179-corset-with-black-skirt**: [source](https://dummyjson.com/products/179) — DummyJSON sample product catalogue
+- **collection-180-dress-pea**: [source](https://dummyjson.com/products/180) — DummyJSON sample product catalogue
+- **collection-181-marni-red-black-suit**: [source](https://dummyjson.com/products/181) — DummyJSON sample product catalogue
+- **collection-182-green-crystal-earring**: [source](https://dummyjson.com/products/182) — DummyJSON sample product catalogue
+- **collection-183-green-oval-earring**: [source](https://dummyjson.com/products/183) — DummyJSON sample product catalogue
+- **collection-184-tropical-earring**: [source](https://dummyjson.com/products/184) — DummyJSON sample product catalogue
+- **collection-185-black-brown-slipper**: [source](https://dummyjson.com/products/185) — DummyJSON sample product catalogue
+- **collection-186-calvin-klein-heel-shoes**: [source](https://dummyjson.com/products/186) — DummyJSON sample product catalogue
+- **collection-187-golden-shoes-woman**: [source](https://dummyjson.com/products/187) — DummyJSON sample product catalogue
+- **collection-188-pampi-shoes**: [source](https://dummyjson.com/products/188) — DummyJSON sample product catalogue
+- **collection-189-red-shoes**: [source](https://dummyjson.com/products/189) — DummyJSON sample product catalogue
+- **collection-190-iwc-ingenieur-automatic-steel**: [source](https://dummyjson.com/products/190) — DummyJSON sample product catalogue
+- **ivory-cropped-blazer**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/5008492c-339e-454c-b741-a676d22f1f5c.jpg) — CC0 1.0
+- **ivory-tailored-blazer**: [source](https://github.com/alexeygrigorev/clothing-dataset/blob/master/images/67242183-82be-491d-84cb-cd0ae9d00e19.jpg) — CC0 1.0
+- **collection-193-watch-gold-for-women**: [source](https://dummyjson.com/products/193) — DummyJSON sample product catalogue
+- **collection-194-women-s-wrist-watch**: [source](https://dummyjson.com/products/194) — DummyJSON sample product catalogue

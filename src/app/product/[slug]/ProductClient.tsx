@@ -21,7 +21,7 @@ const allSizes = ["S", "M", "L", "XL", "XXL"];
 export default function ProductClient({ product, relatedProducts, averageRating, totalReviews }: ProductClientProps) {
   const addItem = useCart((state) => state.addItem);
   const toggleWishlist = useWishlist((state) => state.toggleWishlist);
-  const isInWishlist = useWishlist((state) => state.isInWishlist);
+  const wishlisted = useWishlist((state) => state.items.some(item => item.productId === product.id));
   const images = safeJsonParse<string[]>(product.images, []);
   const sizes = safeJsonParse<string[]>(product.sizes, []);
   const colors = safeJsonParse<ShopColor[]>(product.colors, []);
@@ -37,7 +37,7 @@ export default function ProductClient({ product, relatedProducts, averageRating,
 
   const inStock = product.stock > 0;
   const hasDiscount = product.salePrice !== null;
-  const wishlisted = isInWishlist(product.id);
+
 
   useEffect(() => {
     const onScroll = () => {

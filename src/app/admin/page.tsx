@@ -33,6 +33,8 @@ export default function AdminDashboardPage() {
   const [pSalePrice, setPSalePrice] = useState("");
   const [pStock, setPStock] = useState("");
   const [pCategory, setPCategory] = useState("MEN");
+  const [pProductType, setPProductType] = useState("Clothing");
+  const [pAgeGroup, setPAgeGroup] = useState("Adults");
   const [pBadge, setPBadge] = useState("");
   const [pImages, setPImages] = useState(""); // JSON String
   const [pSizes, setPSizes] = useState("[\"S\",\"M\",\"L\",\"XL\"]");
@@ -179,6 +181,8 @@ export default function AdminDashboardPage() {
       salePrice: pSalePrice ? parseFloat(pSalePrice) : null,
       stock: parseInt(pStock) || 0,
       category: pCategory,
+      productType: pProductType,
+      ageGroup: pAgeGroup,
       badge: pBadge || null,
       images: pImages || "[]",
       sizes: pSizes || "[\"S\",\"M\",\"L\"]",
@@ -218,6 +222,8 @@ export default function AdminDashboardPage() {
     setPSalePrice(prod.salePrice ? prod.salePrice.toString() : "");
     setPStock(prod.stock.toString());
     setPCategory(prod.category);
+    setPProductType(prod.productType || "Clothing");
+    setPAgeGroup(prod.ageGroup || "Adults");
     setPBadge(prod.badge || "");
     setPImages(prod.images);
     setPSizes(prod.sizes);
@@ -516,6 +522,8 @@ export default function AdminDashboardPage() {
                         setPSalePrice("");
                         setPStock("10");
                         setPCategory("MEN");
+                        setPProductType("Clothing");
+                        setPAgeGroup("Adults");
                         setPBadge("NEW");
                         setPImages("[]");
                         setPMaterial("");
@@ -561,7 +569,11 @@ export default function AdminDashboardPage() {
                       </div>
                     </div>
 
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--space-md)" }}>
+                    <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"var(--space-md)"}}>
+<div className="luxury-input-group"><label className="luxury-label" htmlFor="product-type">Product type *</label><input id="product-type" value={pProductType} onChange={e=>setPProductType(e.target.value)} className="luxury-input" maxLength={60} required /></div>
+<div className="luxury-input-group"><label className="luxury-label" htmlFor="product-age">Age group</label><select id="product-age" value={pAgeGroup} onChange={e=>setPAgeGroup(e.target.value)} className="luxury-input"><option>Adults</option><option>Children</option></select></div>
+</div>
+<div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--space-md)" }}>
                       <div className="luxury-input-group">
                         <label className="luxury-label">Category *</label>
                         <select

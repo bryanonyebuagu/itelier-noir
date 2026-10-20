@@ -14,6 +14,7 @@ export interface ShopProduct {
   material?: string | null;
   care?: string | null;
   productType?: string;
+  ageGroup?: string;
   gender?: "MEN" | "WOMEN";
   tags?: string[];
   isOnSale?: boolean;
@@ -40,7 +41,7 @@ export interface ShopFiltersState {
   priceMax: string;
   availability: AvailabilityValue;
   productType: string;
-  gender: string;
+  ageGroup: string;
 }
 
 export function safeJsonParse<T>(value: string | null | undefined, fallback: T): T {

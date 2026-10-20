@@ -55,6 +55,8 @@ model Product {
   salePrice      Float?      // In NGN (Discounted price)
   stock          Int         @default(10)
   category       String      // MEN, WOMEN, COLLECTIONS, SALE
+  productType    String?
+  ageGroup       String?
   badge          String?     // NEW, TRENDING, BEST_SELLER, LIMITED_EDITION, SALE
   images         String      // JSON Stringified Array of URLs
   sizes          String      // JSON Stringified Array of sizes (e.g., ["S", "M", "L", "XL"])

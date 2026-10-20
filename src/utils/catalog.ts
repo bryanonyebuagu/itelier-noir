@@ -8,7 +8,7 @@ export async function getCatalog(): Promise<CatalogProduct[]> {
     const known = new Set(records.map(p=>p.slug));
     const products = records.filter(p=>p.isVisible).map(p=>{
       const curated = curatedCatalog.find(item=>item.slug===p.slug);
-      return {...curated,...p,images:p.images,createdAt:p.createdAt.toISOString(),updatedAt:p.updatedAt.toISOString(),reviews:p.reviews.map(r=>({...r,createdAt:r.createdAt.toISOString()}))};
+      return {...curated,...p,productType:p.productType||curated?.productType||"Clothing",ageGroup:p.ageGroup||curated?.ageGroup||"Adults",images:p.images,createdAt:p.createdAt.toISOString(),updatedAt:p.updatedAt.toISOString(),reviews:p.reviews.map(r=>({...r,createdAt:r.createdAt.toISOString()}))};
     });
     return [...products,...curatedCatalog.filter(p=>!known.has(p.slug)).map(p=>({...p,reviews:[]}))];
   } catch { return curatedCatalog.map(p=>({...p,reviews:[]})); }
@@ -25,6 +25,7 @@ export function filterCatalog<T extends ShopProduct>(products:T[],params:URLSear
     if(params.get("color") && !colors.some(c=>c.name.toLowerCase()===params.get("color")!.toLowerCase())) return false;
     if(params.get("material") && !p.material?.toLowerCase().includes(params.get("material")!.toLowerCase())) return false;
     if(params.get("productType") && p.productType!==params.get("productType")) return false;
+    if(params.get("ageGroup") && (p.ageGroup||"Adults")!==params.get("ageGroup")) return false;
     if(params.get("availability")==="in-stock" && p.stock<=0) return false;
     if(params.get("availability")==="sold-out" && p.stock>0) return false;
     const price=getProductPrice(p);

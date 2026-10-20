@@ -8,6 +8,7 @@ interface ShopFiltersProps {
   filters: ShopFiltersState;
   sizes: string[];
   colors: ShopColor[];
+  productTypes: string[];
   onChange: (filters: ShopFiltersState) => void;
   onClear: () => void;
   onClose?: () => void;
@@ -19,12 +20,9 @@ const availabilityOptions: Array<{ value: AvailabilityValue; label: string }> = 
   { value: "sold-out", label: "Sold out" },
 ];
 
-const productTypes = ["Clothing", "Outfits", "Jackets", "Dresses", "Shirts", "New Arrivals"];
-const genderOptions = ["Men", "Women"];
-
-export default function ShopFilters({ filters, sizes, colors, onChange, onClear, onClose }: ShopFiltersProps) {
+export default function ShopFilters({ filters, sizes, colors, productTypes, onChange, onClear, onClose }: ShopFiltersProps) {
   const updateFilter = (patch: Partial<ShopFiltersState>) => {
-    onChange({ ...filters, ...patch });
+    onChange({ ...filters, ...((patch.productType !== undefined || patch.ageGroup !== undefined) ? {size: "", color: ""} : {}), ...patch });
   };
 
   return (
@@ -67,15 +65,15 @@ export default function ShopFilters({ filters, sizes, colors, onChange, onClear,
       </div>
 
       <div className={styles.filterGroup}>
-        <span className={styles.filterLabel}>Gender</span>
+        <span className={styles.filterLabel}>Age group</span>
         <div className={styles.availabilityGrid}>
-          {genderOptions.map((gender) => (
+          {["Adults", "Children"].map((ageGroup) => (
             <button
-              className={`${styles.availabilityButton} ${filters.gender === gender ? styles.activeOption : ""}`}
-              key={gender}
-              onClick={() => updateFilter({ gender: filters.gender === gender ? "" : gender })}
+              className={`${styles.availabilityButton} ${filters.ageGroup === ageGroup ? styles.activeOption : ""}`}
+              key={ageGroup}
+              onClick={() => updateFilter({ ageGroup: filters.ageGroup === ageGroup ? "" : ageGroup })}
             >
-              {gender}
+              {ageGroup}
             </button>
           ))}
         </div>

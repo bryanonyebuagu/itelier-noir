@@ -12,13 +12,13 @@ npm run db:setup
 npm run dev
 ```
 
-Open http://localhost:3000. Setup creates a local SQLite database and a random authentication secret if `.env` does not exist, then safely upserts 18 products. Repeating the seed preserves existing product edits, customer accounts, orders and inventory levels. Use `node prisma/seed.mjs --refresh-catalog` only when intentionally refreshing the original catalog. It never creates sample customers or accounts with published passwords.
+Open http://localhost:3000. Setup creates a local SQLite database and a random authentication secret if `.env` does not exist, then safely upserts 200 products. Repeating the seed preserves existing product edits, customer accounts, orders and inventory levels. Use `node prisma/seed.mjs --refresh-catalog` only when intentionally refreshing the original catalog. It never creates sample customers or accounts with published passwords.
 
 SQLite makes this checkout self-contained. The uploaded project's original PostgreSQL database and credentials have not been modified or copied into this repository. Production uses the PostgreSQL schema in `prisma/schema.prisma`. Local development uses `prisma/schema.local.prisma`. The build selects its Prisma provider from `DATABASE_URL`. On Vercel, set a PostgreSQL connection string, initialize its schema and seed the catalog before accepting orders. Do not deploy the local SQLite file to ephemeral server storage.
 
 ## Catalog and imagery
 
-- 18 distinct garments: 11 retained concepts and 7 added products, including agbada, kaftan, adire, linen separates and occasion wear.
+- 200 distinct garments: 11 retained concepts and 7 added products, including agbada, kaftan, adire, linen separates and occasion wear.
 - Each product has its own local optimized WebP image, matching colour, description, size options, fabric and care notes.
 - Eight additional images support the homepage and category campaigns.
 - `src/data/products.json` is the initial catalog, shared by preview browsing and the non-destructive seed. Once seeded, database edits control live prices, stock, visibility and images.
@@ -79,3 +79,9 @@ Replace the original template's business biography, contact details, social prof
 API references used: [Next.js pages](https://nextjs.org/docs/app/api-reference/file-conventions/page) and [Paystack transactions](https://paystack.com/docs/api/transaction/).
 
 
+
+## Expanded collections
+
+The curated catalogue contains 100 men’s items and 100 women’s items. Product type and age group are stored in the database and editable by the owner. Men’s filters derive from men’s products, so Dresses is absent. Children’s clothing and footwear have age or EU shoe sizing. Sold-out cards use grayscale photos and a red diagonal line. Favorites contains only the current browser’s explicitly saved items.
+
+See IMAGE-SOURCES.md for external image provenance. New sample listings, prices and stock are catalogue starting points; owner should confirm supplier availability, branded authenticity and jewellery composition before enabling real payments.

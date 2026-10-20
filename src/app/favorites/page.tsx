@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Heart, ShoppingBag, Trash2 } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useSyncExternalStore } from "react";
 import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
@@ -19,8 +19,11 @@ function getColors(item: WishlistItem) {
   return item.colors && item.colors.length > 0 ? item.colors : [{ name: "Obsidian Black", hex: "#080808" }];
 }
 
+const subscribeToHydration = () => () => {};
 export default function FavoritesPage() {
-  const { items, removeItem } = useWishlist();
+  const hydrated = useSyncExternalStore(subscribeToHydration, () => true, () => false);
+  const { items: savedItems, removeItem } = useWishlist();
+  const items = hydrated ? savedItems : [];
   const addItem = useCart((state) => state.addItem);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [sizeById, setSizeById] = useState<Record<string, string>>({});
@@ -85,7 +88,7 @@ export default function FavoritesPage() {
                 <Heart size={36} style={{ marginBottom: "var(--space-md)", color: "var(--color-accent)" }} />
                 <h2 style={{ fontSize: "var(--font-size-h2)", textTransform: "uppercase" }}>No favorites yet</h2>
                 <p style={{ color: "var(--color-text-muted)", margin: "var(--space-sm) auto var(--space-lg)", maxWidth: 420 }}>
-                  Save silhouettes from Men, Women, or Sale and build your private Itelier Noir edit.
+                  Tap the heart on a product to save it here. Only the pieces you choose appear in Favorites.
                 </p>
                 <Link className="btn-primary" href="/shop/men">Browse Men</Link>
               </div>
@@ -122,7 +125,7 @@ export default function FavoritesPage() {
 
                       <div style={{ display: "flex", gap: 6, marginTop: "var(--space-sm)", flexWrap: "wrap" }}>
                         {sizes.map((size) => (
-                          <button key={size} onClick={() => setSizeById((current) => ({ ...current, [item.productId]: size }))} style={{ width: 34, height: 32, border: sizeById[item.productId] === size ? "1px solid var(--color-primary)" : "1px solid var(--color-border)", background: sizeById[item.productId] === size ? "var(--color-primary)" : "transparent", color: sizeById[item.productId] === size ? "var(--color-background)" : "var(--color-primary)", fontSize: "11px", fontWeight: 700 }}>
+                          <button key={size} onClick={() => setSizeById((current) => ({ ...current, [item.productId]: size }))} style={{ minWidth: 34, padding: "0 8px", height: 32, border: sizeById[item.productId] === size ? "1px solid var(--color-primary)" : "1px solid var(--color-border)", background: sizeById[item.productId] === size ? "var(--color-primary)" : "transparent", color: sizeById[item.productId] === size ? "var(--color-background)" : "var(--color-primary)", fontSize: "11px", fontWeight: 700 }}>
                             {size}
                           </button>
                         ))}
