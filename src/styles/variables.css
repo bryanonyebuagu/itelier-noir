@@ -1,0 +1,54 @@
+:root {
+  /* Brand Editorial Colors */
+  --color-primary: #080808;      /* Rich Obsidian Black */
+  --color-secondary: #151515;    /* Warm Charcoal */
+  --color-background: #FAF9F6;   /* Warm Alabaster Off-White */
+  --color-accent: #C5A880;       /* Muted Luxury Gold */
+  --color-accent-hover: #BCA078; /* Slightly darker gold on hover */
+  --color-text: #1C1C1C;         /* Sophisticated Charcoal */
+  --color-text-muted: #666666;   /* Muted grey for descriptions */
+  --color-border: #E2E2E0;       /* Fine layout separation gray */
+  --color-border-dark: #333333;  /* High contrast border */
+  --color-error: #A94442;        /* Elegant dark red for validation errors */
+  --color-success: #2E5A44;      /* Luxury forest green for approvals */
+  --color-card-bg: #FFFFFF;      /* Clean White Card Background */
+  --color-skeleton: #ECEBE8;     /* Soft warm grey for skeleton loading elements */
+
+  /* Editorial Spacing System */
+  --space-xxs: 0.25rem;  /* 4px */
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 0.75rem;   /* 12px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-xxl: 3rem;     /* 48px */
+  --space-xxxl: 4.5rem;  /* 72px */
+  --space-cinema: 6rem;  /* 96px */
+
+  /* Typography Sizes */
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-h3: 1.5rem;     /* 24px */
+  --font-size-h2: 2rem;       /* 32px */
+  --font-size-h1: 3rem;       /* 48px */
+  --font-size-hero: 4.5rem;   /* 72px */
+
+  /* Font Weights */
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Layout Boundaries */
+  --max-width: 1440px;
+  --sidebar-width: 420px;
+  --navbar-height: 80px;
+
+  /* Transitions */
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-fast: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}

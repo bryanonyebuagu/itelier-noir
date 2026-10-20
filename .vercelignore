@@ -1,0 +1,8 @@
+.env*
+!.env.example
+prisma/*.db
+prisma/*.db-*
+node_modules
+.next
+.git
+tests

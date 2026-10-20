@@ -1,0 +1,160 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id                String    @id @default(uuid())
+  email             String    @unique
+  passwordHash      String
+  name              String
+  phone             String?
+  profilePicture    String?
+  role              String    @default("USER") // USER or ADMIN
+  isVerified        Boolean   @default(false)
+  verificationToken String?
+  resetToken        String?
+  resetTokenExpiry  DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+  
+  addresses         Address[]
+  orders            Order[]
+}
+
+model Address {
+  id             String   @id @default(uuid())
+  userId         String
+  name           String   // e.g., "Home Address"
+  fullName       String
+  email          String
+  phone          String
+  streetAddress  String
+  apartment      String?
+  city           String
+  state          String
+  postalCode     String
+  country        String   @default("Nigeria")
+  isDefault      Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Product {
+  id             String      @id @default(uuid())
+  title          String
+  description    String
+  slug           String      @unique
+  basePrice      Float       // In NGN
+  salePrice      Float?      // In NGN (Discounted price)
+  stock          Int         @default(10)
+  category       String      // MEN, WOMEN, COLLECTIONS, SALE
+  badge          String?     // NEW, TRENDING, BEST_SELLER, LIMITED_EDITION, SALE
+  images         String      // JSON Stringified Array of URLs
+  sizes          String      // JSON Stringified Array of sizes (e.g., ["S", "M", "L", "XL"])
+  colors         String      // JSON Stringified Array of color objects {name, hex}
+  material       String?     // e.g., "100% Organic Merino Wool"
+  care           String?     // Care instructions
+  isVisible      Boolean     @default(true)
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+
+  reviews        Review[]
+  orderItems     OrderItem[]
+}
+
+model Order {
+  id             String      @id @default(uuid())
+  orderNumber    String      @unique // e.g., AN-202605-1234
+  userId         String?     // Nullable for guest checkouts
+  email          String
+  phone          String
+  shippingAddress String     // JSON Stringified shipping info
+  shippingMethod String      // STANDARD, EXPRESS, SAME_DAY
+  shippingCost   Float       // In NGN
+  subtotal       Float       // In NGN
+  discount       Float       @default(0) // In NGN
+  couponCode     String?
+  total          Float       // In NGN
+  status         String      @default("PENDING_PAYMENT") // PENDING_PAYMENT, PROCESSING, SHIPPED, DELIVERED, EXPIRED
+  paymentGateway String      // PAYSTACK, FLUTTERWAVE, CRYPTO
+  paymentStatus  String      @default("UNPAID") // UNPAID, PAID, REFUNDED, FAILED
+  paymentRef     String      @unique // Paystack ref, Flutterwave ref, or Crypto address
+  
+  // Crypto specific fields
+  cryptoAmount   Float?      // crypto amount (BTC/ETH/USDT)
+  cryptoCurrency String?     // BTC, ETH, USDT
+  cryptoInvoiceExpiry DateTime?
+  
+  trackingNumber String?
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+
+  user           User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+  items          OrderItem[]
+}
+
+model OrderItem {
+  id        String   @id @default(uuid())
+  orderId   String
+  productId String
+  title     String
+  price     Float    // Price at purchase
+  quantity  Int
+  size      String
+  color     String   // e.g., "Charcoal Black"
+  image     String   // Thumbnail image URL
+
+  order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model Coupon {
+  id          String   @id @default(uuid())
+  code        String   @unique
+  type        String   // PERCENTAGE or FIXED
+  value       Float    // Discount value
+  expiryDate  DateTime
+  maxUses     Int      @default(100)
+  usageCount  Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}
+
+model Review {
+  id          String   @id @default(uuid())
+  productId   String
+  rating      Int      // 1 to 5
+  text        String
+  userName    String
+  verified    Boolean  @default(false)
+  approved    Boolean  @default(false) // Admin must approve review
+  createdAt   DateTime @default(now())
+
+  product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model Newsletter {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+}
+
+model HomepageContent {
+  id                 String   @id @default(uuid())
+  announcementText   String
+  announcementActive Boolean  @default(true)
+  heroTitle          String
+  heroSubtitle       String
+  heroImage          String
+  promoBannerTitle   String
+  promoBannerText    String
+  promoBannerExpiry  DateTime
+  updatedAt          DateTime @updatedAt
+}
