@@ -1,8 +1,34 @@
 # Itelier Noir
 
-Contemporary fashion and Nigerian custom wear storefront built with Next.js 16, React 19, Prisma and Zustand.
+A contemporary fashion storefront focused on Nigerian custom wear, built with Next.js, React, TypeScript, Prisma, and Zustand.
 
-## Start locally
+**Live demo:** [itelier-noir.vercel.app](https://itelier-noir.vercel.app/)
+
+I built this project to explore a complete commerce experience, from editorial product discovery through cart and checkout, alongside the tools needed to manage a catalog.
+
+## Highlights
+
+- Responsive storefront with collection pages, search, filtering, sorting, and product galleries.
+- Variant selection, size guidance, favorites, cart validation, and stock-aware quantities.
+- Three-step checkout with server-priced orders, coupon validation, and Paystack transaction initialization and verification.
+- Product, order, coupon, and review management in an owner-restricted admin area.
+- Persistent customer accounts, delivery addresses, order history, and security controls.
+- Shared interface patterns, responsive layouts, and visible keyboard focus states.
+
+## Catalog and imagery
+
+The catalog contains 200 product entries across men's, women's, and children's collections, including Nigerian and contemporary styles such as agbada, kaftan, and adire. It also includes category and homepage campaign imagery.
+
+Product and campaign images include AI-generated concepts and sourced imagery. They are presentation assets, not evidence of manufactured stock. See [image briefs](IMAGE-BRIEFS.md) and [image sources](IMAGE-SOURCES.md) for provenance. Catalog descriptions, prices, sizes, and availability are demonstration data and should be verified against real products before commercial use.
+
+## Tech stack
+
+- Next.js 16, React 19, TypeScript
+- Prisma with SQLite for local development and PostgreSQL for production
+- Zustand for client state
+- Paystack hosted checkout integration
+
+## Run locally
 
 Use Node.js 22 or 24 and npm:
 
@@ -12,75 +38,25 @@ npm run db:setup
 npm run dev
 ```
 
-Open http://localhost:3000. Setup creates a local SQLite database and a random authentication secret if `.env` does not exist, then safely upserts 200 products. Repeating the seed preserves existing product edits, customer accounts, orders and inventory levels. Use `node prisma/seed.mjs --refresh-catalog` only when intentionally refreshing the original catalog. It never creates sample customers or accounts with published passwords.
+Open [http://localhost:3000](http://localhost:3000). Local setup creates a SQLite database and a development authentication secret when needed, then seeds the catalog. The seed is designed to preserve existing edits and records when run again.
 
-SQLite makes this checkout self-contained. The uploaded project's original PostgreSQL database and credentials have not been modified or copied into this repository. Production uses the PostgreSQL schema in `prisma/schema.prisma`. Local development uses `prisma/schema.local.prisma`. The build selects its Prisma provider from `DATABASE_URL`. On Vercel, set a PostgreSQL connection string, initialize its schema and seed the catalog before accepting orders. Do not deploy the local SQLite file to ephemeral server storage.
+For production, configure a PostgreSQL `DATABASE_URL` and the required deployment environment variables. See `.env.example` for the configuration names. Do not commit secrets or local database files.
 
-## Catalog and imagery
+## Payments and email
 
-- 200 distinct garments: 11 retained concepts and 7 added products, including agbada, kaftan, adire, linen separates and occasion wear.
-- Each product has its own local optimized WebP image, matching colour, description, size options, fabric and care notes.
-- Eight additional images support the homepage and category campaigns.
-- `src/data/products.json` is the initial catalog, shared by preview browsing and the non-destructive seed. Once seeded, database edits control live prices, stock, visibility and images.
-- Image briefs and provenance: [IMAGE-BRIEFS.md](IMAGE-BRIEFS.md).
+Paystack transaction initialization and server-side verification are implemented. A merchant account and valid environment configuration are required for live transactions; live payment processing has not been verified with a merchant account. Email verification, password reset email delivery, and newsletter campaign delivery are not integrated.
 
-## Features
-
-- Responsive editorial homepage; men, women, archive, all-products and collection routes.
-- Search, colour, size, price, availability and product filters, with sale-aware sorting.
-- Product detail galleries, size guide, variant selection, quick add and persistent favorites.
-- Cart quantity validation and stock limits shared across size selections.
-- Three-step checkout with one shipping calculation on the browser and server; free express at ₦150,000.
-- Server-priced orders, validated coupons and a hosted Paystack payment flow.
-- Verified payment amounts, currency, customer email and exact order reference; duplicate callbacks cannot decrement inventory twice. A paid order with a stock conflict is placed on hold for the merchant.
-- Scrypt password hashing, legacy hash upgrade on login, signed cookies, customer order history and persistent delivery addresses.
-- Admin merchandising, order management, coupon and review moderation. Removing a product hides it while retaining order history.
-- Newsletter storage, order tracking, fitting guidance, accessible focus states and branded metadata.
-
-## Payments
-
-Set `PAYSTACK_SECRET_KEY` in `.env` and set `NEXT_PUBLIC_APP_URL` to your actual site origin. The app initializes a hosted transaction and verifies it with Paystack before marking an order paid. Missing or mock keys produce a clear checkout message, not a simulated successful charge. Payment processing has not been tested with a merchant account or real money.
-
-Paystack is the configured gateway. The previous simulated Flutterwave and cryptocurrency payment paths were removed from checkout. Customers keep their cart if payment is interrupted and can retry verification from the return page. Fulfillment, refunds and paid orders on hold require merchant attention. Add a verified provider webhook before relying on payment reconciliation when a customer closes the browser before returning.
-
-## Administrator setup
-
-The production owner can activate access using a private, single-use invitation and choose their own password. The configured email is reserved from public registration. An invitation expires after 24 hours and stops working once the owner account is activated. Its secret is stored only in the deployment environment, never in this repository.
-
-Register your own account, then grant that account admin access from the project directory:
-
-```sh
-node --env-file=.env prisma/promote-admin.mjs owner@example.com
-```
-
-Set `OWNER_EMAIL` in Vercel to this exact email. Product uploads, additions and edits require both the matching email and a database administrator role; access is checked on the server. The owner editor supports image uploads, cover selection, image removal, size selection and colour swatches. Uploaded photos are resized and saved durably with the product in the database, so they survive Vercel deployments.
-
-Public registration always creates a customer. The first visitor cannot claim administrator privileges.
-
-To update an existing product, sign in as the configured owner, open `/admin`, choose **Products → Edit**, and use **Images, sizes & colours**. Add photos without replacing the gallery, choose a cover, select sizes, and add named colour swatches. Click **Save product** to publish the changes. A product must keep at least one image, size and colour.
-
-## Checks
+## Quality checks
 
 ```sh
 npm test
 npm run typecheck
+npm run lint
 npm run build
 ```
 
-Core tests cover image uniqueness and existence, shipping thresholds, search/filter/sale behavior, catalog fallback, password compatibility and cart stock limits.
+The test suite covers catalog imagery, shipping thresholds, product filtering, catalog fallback, password compatibility, and cart stock limits. The repository also documents browser checks for core customer and owner workflows.
 
-Local verification: 12 automated tests pass and the production build succeeds. Browser checks cover 13 routes, registration, owner-only uploads, gallery append, saved size/colour changes, address persistence, quick add, favorites, checkout configuration feedback and responsive layout. Production checks also confirm PostgreSQL-backed accounts, saved addresses and owner access restrictions. Live merchant payments require a configured Paystack merchant key.
+## Project notes
 
-## Before a public launch
-
-Replace the original template's business biography, contact details, social profiles, delivery estimates and fitting measurements with confirmed brand information. Define the merchant's returns policy. Email verification and password-reset emails are not integrated; newsletter signups are stored without sending campaigns. Never commit `.env`, database files, or customer data.
-
-API references used: [Next.js pages](https://nextjs.org/docs/app/api-reference/file-conventions/page) and [Paystack transactions](https://paystack.com/docs/api/transaction/).
-
-
-
-## Expanded collections
-
-The curated catalogue contains 100 men’s items and 100 women’s items. Product type and age group are stored in the database and editable by the owner. Men’s filters derive from men’s products, so Dresses is absent. Children’s clothing and footwear have age or EU shoe sizing. Sold-out cards use grayscale photos and a red diagonal line. Favorites contains only the current browser’s explicitly saved items.
-
-See IMAGE-SOURCES.md for external image provenance. New sample listings, prices and stock are catalogue starting points; owner should confirm supplier availability, branded authenticity and jewellery composition before enabling real payments.
+The project uses a local SQLite database for a self-contained development setup. Production configuration uses PostgreSQL. See the scripts and Prisma schemas for environment-specific setup details.
