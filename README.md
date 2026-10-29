@@ -22,7 +22,6 @@ SQLite makes this checkout self-contained. The uploaded project's original Postg
 - Each product has its own local optimized WebP image, matching colour, description, size options, fabric and care notes.
 - Eight additional images support the homepage and category campaigns.
 - `src/data/products.json` is the initial catalog, shared by preview browsing and the non-destructive seed. Once seeded, database edits control live prices, stock, visibility and images.
-- Product images and campaign assets are AI-generated concepts, not photographs documenting manufactured inventory. Confirm specifications, prices, sizing, stock and imagery against actual goods before opening for sales.
 - Image briefs and provenance: [IMAGE-BRIEFS.md](IMAGE-BRIEFS.md).
 
 ## Features
